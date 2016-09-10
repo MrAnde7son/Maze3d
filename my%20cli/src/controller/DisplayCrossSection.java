@@ -8,9 +8,9 @@ package controller;
 public class DisplayCrossSection implements Command {
 
 	@Override
-	public void doCommand() {
+	public void doCommand(String str) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }
