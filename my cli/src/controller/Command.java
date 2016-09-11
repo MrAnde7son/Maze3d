@@ -5,5 +5,5 @@ package controller;
  *
  */
 public interface Command {
-	public void doCommand();
+	public abstract void doCommand(String cmd);
 }

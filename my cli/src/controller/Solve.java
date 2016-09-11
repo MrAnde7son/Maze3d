@@ -5,12 +5,17 @@ package controller;
  * @author Itamar
  *
  */
-public class Solve implements Command {
+public class Solve extends CommonCommand {
+
+	public Solve(Controller controller) {
+		super(controller);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
-	public void doCommand() {
+	public void doCommand(String cmd) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

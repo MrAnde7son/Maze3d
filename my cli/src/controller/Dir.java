@@ -7,19 +7,25 @@ import java.io.File;
  * @author Itamar
  *
  */
-public class Dir implements Command {
+public class Dir extends CommonCommand {
 
 	private File file;
 	
-	public Dir(String path) {
-		file = new File(path);
+	public Dir(Controller controller) {
+		super(controller);
 	}
 	
 	@Override
-	public void doCommand() {
-		String[] list = file.list();
-		for(String str: list)
-			System.out.println(str + '\t');
+	public void doCommand(String cmd) {
+		try{
+			file = new File(cmd);
+			String[] list = file.list();
+			for(String str: list)
+				System.out.println(str + '\t');
+		}
+		catch(NullPointerException e){
+			controller.notify("Invalid path.");
+		}
 	}
 
 }

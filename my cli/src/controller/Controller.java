@@ -5,5 +5,5 @@ package controller;
  *
  */
 public interface Controller {
-	public void notify(String name);
+	public abstract void notify(String name);
 }

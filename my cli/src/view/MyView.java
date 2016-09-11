@@ -4,15 +4,15 @@ import java.util.HashMap;
 
 import algorithms.mazeGenerators.Maze3d;
 import controller.Command;
-import controller.Controller;
+import controller.MyController;
 /***
  * View component in MVC. Designed to work with Maze3d.
  * @author Itamar
  *
  */
-public class MyView implements View {
+public class MyView extends CommonView {
 
-	private Controller controller;
+	private MyController controller;
 	
 	@Override
 	public void notify(String name) {
@@ -30,6 +30,10 @@ public class MyView implements View {
 	public void display(Maze3d maze) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public MyController getController() {
+		return controller;
 	}
 
 }

@@ -11,24 +11,17 @@ import java.io.OutputStream;
  * @author Itamar
  *
  */
-public class SaveMaze implements Command {
+public class SaveMaze extends CommonCommand {
 
-	private OutputStream out;
-	private String name;
-	private String path;
-	
-	public SaveMaze(String name, String path) throws FileNotFoundException {
-		this.name = name;
-		this.path = path;
-		this.out = new MyCompressorOutputStream(new FileOutputStream(path));
+	public SaveMaze(Controller controller) {
+		super(controller);
+		// TODO Auto-generated constructor stub
 	}
-	
-	@Override
-	public void doCommand() {
 
-		this.out.write(maze.toByteArray());
-		this.out.flush();
-		this.out.close();
+	@Override
+	public void doCommand(String cmd) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -10,7 +10,8 @@ import controller.Command;
  *
  */
 public interface View {
-	public void notify(String name);
-	public void display(Maze3d maze);
-	public void setCommands(HashMap<String,Command> commands);
+	public abstract void notify(String name);
+	public abstract void display(Maze3d maze);
+	public abstract void setCommands(HashMap<String,Command> commands);
+	public void exit();
 }

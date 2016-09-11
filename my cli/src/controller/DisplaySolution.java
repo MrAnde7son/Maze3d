@@ -5,12 +5,16 @@ package controller;
  * @author Itamar
  *
  */
-public class DisplaySolution implements Command {
+public class DisplaySolution extends CommonCommand {
+
+	public DisplaySolution(Controller controller) {
+		super(controller);
+	}
 
 	@Override
-	public void doCommand() {
+	public void doCommand(String cmd) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

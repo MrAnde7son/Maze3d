@@ -5,12 +5,16 @@ package controller;
  * @author Itamar
  *
  */
-public class Exit implements Command {
+public class Exit extends CommonCommand {
+
+	public Exit(Controller controller) {
+		super(controller);
+	}
 
 	@Override
-	public void doCommand() {
-		// TODO Auto-generated method stub
-
+	public void doCommand(String cmd) {
+		((MyController)this.controller).getModel().exit();
+		((MyController)this.controller).getView().exit();
 	}
 
 }

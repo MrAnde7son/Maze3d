@@ -8,19 +8,24 @@ import algorithms.mazeGenerators.Maze3d;
  * @author Itamar
  *
  */
-public class GenerateMaze implements Command {
+public class GenerateMaze extends CommonCommand {
 
 	private String name;
 	private Maze3d maze;
 	
-	public GenerateMaze(String name, int x, int y, int z) {
-		maze = (new GrowingTreeGenerator()).generate(x, y, z);
+	public GenerateMaze(Controller controller){
+		super(controller);
 	}
-	
-	@Override
-	public void doCommand() {
-		// TODO Auto-generated method stub
 
+	@Override
+	public void doCommand(String cmd) {
+		String[] params = cmd.split(" ");
+		String name = params[0];
+		// TODO perform in seperated thread
+		Maze3d maze = (new GrowingTreeGenerator()).generate(Integer.parseInt(params[1]), Integer.parseInt(params[2]), Integer.parseInt(params[3]));
+		((MyController)this.controller).getModel().addMaze(name, maze);
+		this.controller.notify("maze " + name + " is ready!");
+		
 	}
 
 }
