@@ -7,7 +7,7 @@ package controller;
  */
 public class Solve extends CommonCommand {
 
-	public Solve(Controller controller) {
+	public Solve(CommonController controller) {
 		super(controller);
 		// TODO Auto-generated constructor stub
 	}

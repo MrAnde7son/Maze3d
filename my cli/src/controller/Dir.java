@@ -4,14 +4,14 @@ import java.io.File;
 
 /***
  * dir command. Lists all files and folders on a given path.
- * @author Itamar
+ * @author Itamar&Erlich
  *
  */
 public class Dir extends CommonCommand {
 
 	private File file;
 	
-	public Dir(Controller controller) {
+	public Dir(CommonController controller) {
 		super(controller);
 	}
 	

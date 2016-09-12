@@ -2,12 +2,12 @@ package controller;
 
 /***
  * display_solution command. Displays the solution of a maze by its name.
- * @author Itamar
+ * @author Itamar&Erlich
  *
  */
 public class DisplaySolution extends CommonCommand {
 
-	public DisplaySolution(Controller controller) {
+	public DisplaySolution(CommonController controller) {
 		super(controller);
 	}
 

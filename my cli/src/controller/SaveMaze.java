@@ -1,10 +1,6 @@
 package controller;
 
-import io.MyCompressorOutputStream;
-
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
+import java.io.IOException;
 
 /***
  * save_maze command. Saves maze to file.
@@ -13,15 +9,18 @@ import java.io.OutputStream;
  */
 public class SaveMaze extends CommonCommand {
 
-	public SaveMaze(Controller controller) {
+	public SaveMaze(CommonController controller) {
 		super(controller);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void doCommand(String cmd) {
-		// TODO Auto-generated method stub
-		
+		try {
+			this.controller.getModel().saveMaze(cmd);
+		} catch (IOException e) {
+			this.controller.notify("Invalid path.");
+		}
 	}
 
 }

@@ -2,9 +2,9 @@ package controller;
 
 public abstract class CommonCommand implements Command {
 
-	protected Controller controller;
+	protected CommonController controller;
 	
-	public CommonCommand(Controller controller) {
+	public CommonCommand(CommonController controller) {
 		this.controller = controller;
 	}	
 	

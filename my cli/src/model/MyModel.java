@@ -4,7 +4,6 @@ import io.MyCompressorOutputStream;
 import io.MyDecompressorInputStream;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +14,7 @@ import controller.MyController;
 import algorithms.mazeGenerators.Maze3d;
 /***
  * Model component in MVC. Designed to work with Maze3d.
- * @author Itamar
+ * @author Itamar&Erlich
  *
  */
 public class MyModel extends CommonModel {
@@ -25,6 +24,7 @@ public class MyModel extends CommonModel {
 	
 	public MyModel(){
 		this.mazes = new HashMap<>();
+		
 	}
 	
 	@Override
@@ -55,10 +55,10 @@ public class MyModel extends CommonModel {
 		String[] params = arg.split(" ");
 		String name = params[0];
 		InputStream in=new MyDecompressorInputStream(new FileInputStream(params[1] + ".maz"));
-		byte b[]=new byte[4096];
-		in.read(b);
+		byte[] maze=new byte[4096];
+		in.read(maze);
 		in.close();
-		Maze3d loaded = new Maze3d(b);
+		Maze3d loaded = new Maze3d(maze);
 		addMaze(name, loaded);
 	}
 	@Override

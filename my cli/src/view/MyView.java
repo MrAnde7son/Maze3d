@@ -13,17 +13,16 @@ import controller.MyController;
 public class MyView extends CommonView {
 
 	private MyController controller;
+	private CLI cli;
 	
 	@Override
 	public void notify(String name) {
-		// TODO Auto-generated method stub
-
+		this.controller.notify(name);
 	}
 
 	@Override
 	public void setCommands(HashMap<String, Command> commands) {
-		// TODO Auto-generated method stub
-
+		this.controller.getView().setCommands(commands);
 	}
 
 	@Override

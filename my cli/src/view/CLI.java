@@ -18,16 +18,23 @@ public class CLI {
 		this.commands = commands;
 	}
 	
-	public void start() throws IOException {
-		String str = new String();
-		while(!str.equals("exit")){
-			str = this.in.readLine();
-			try {
-				commands.get(str).doCommand();
+	public void start() {
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				String str = new String();
+				while(!str.equals("exit")){
+					try {
+						str = CLI.this.in.readLine();
+						commands.get(str).doCommand(str);
+					}
+					catch(IOException e) {
+						out.write("Error executing command.");
+					}
+				}
 			}
-			catch(Exception e) {
-				out.write("Error executing command.");
-			}
-		}
+		}).start();
+
 	}
 }
