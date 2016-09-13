@@ -1,14 +1,14 @@
 package controller;
 
-import model.CommonModel;
-import view.CommonView;
+import model.Model;
+import view.View;
 
 public abstract class CommonController implements Controller {
 
-	protected CommonModel model;
-	protected CommonView view;
+	protected Model model;
+	protected View view;
 	
-	public CommonController(CommonModel model, CommonView view) {
+	public CommonController(Model model, View view) {
 		this.model = model;
 		this.view = view;
 	}
@@ -16,11 +16,11 @@ public abstract class CommonController implements Controller {
 	@Override
 	public abstract void notify(String name);
 	
-	public CommonModel getModel() {
+	public Model getModel() {
 		return model;
 	}
 
-	public CommonView getView() {
+	public View getView() {
 		return view;
 	}
 }

@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 
 import controller.Command;
+import controller.Controller;
 import controller.MyController;
 /***
  * View component in MVC. Designed to work with Maze3d.
@@ -13,12 +14,10 @@ import controller.MyController;
  */
 public class MyView extends CommonView {
 
-	private MyController controller;
-	private CLI cli;
+	//private MyController controller;
 	
 	public MyView(BufferedReader in, PrintWriter out){
-		this.in = in;
-		this.out = out;		
+		super(in,out);	
 	}
 	
 	@Override
@@ -34,10 +33,10 @@ public class MyView extends CommonView {
 	
 	@Override
 	public void setCommands(HashMap<String, Command> commands) {
-		this.controller.getView().setCommands(commands);
+		((MyController)this.controller).getView().setCommands(commands);
 	}
 
-	public MyController getController() {
+	public Controller getController() {
 		return controller;
 	}
 

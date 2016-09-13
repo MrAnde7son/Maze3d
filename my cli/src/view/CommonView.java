@@ -13,14 +13,21 @@ import controller.Controller;
 
 public abstract class CommonView implements View {
 
-	Controller controller;
-	CLI cli;
-	HashMap<String,Command> hashCommand;
-	BufferedReader in;
-	PrintWriter out;
+	protected Controller controller;
+	protected CLI cli;
+	protected HashMap<String,Command> hashCommand;
+	protected BufferedReader in;
+	protected PrintWriter out;
 
+	public CommonView(BufferedReader in,PrintWriter out) {
+		this.in = in;
+		this.out = out;
+		hashCommand = new HashMap<>();
+		
+	}
+	
 	/*
-	 * set the controller that work with the view
+	 * Configure the controller-view integration
 	 *
 	 */
 	public void setController(Controller controller){

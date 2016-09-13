@@ -5,7 +5,7 @@ import java.io.IOException;
 import algorithms.mazeGenerators.Maze3d;
 /***
  * Model component in MVC.
- * @author Itamar
+ * @author Itamar&Chen
  *
  */
 public interface Model {
@@ -13,5 +13,5 @@ public interface Model {
 	public abstract Maze3d getData(String name);
 	public void exit();
 	public void saveMaze(String arg) throws IOException;
-	public void loadMaze(String arg) throws IOException ;
+	public void loadMaze(String arg) throws IOException;
 }

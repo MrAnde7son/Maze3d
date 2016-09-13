@@ -2,8 +2,8 @@ package controller;
 
 import java.util.HashMap;
 
-import model.CommonModel;
-import view.CommonView;
+import model.Model;
+import view.View;
 /***
  * Controller component in MVC. Designed to work with Maze3d.
  * @author Itamar & Chen
@@ -21,8 +21,9 @@ public class MyController extends CommonController {
 	 * @param view - get object from type View
 	 */
 	
-	public MyController(CommonModel model, CommonView view) {
+	public MyController(Model model, View view) {
 		super(model, view);
+		commands = new HashMap<>();
 		commands.put("dir", new Dir(this));
 		commands.put("display", new Display(this));
 		commands.put("generate", new GenerateMaze(this));

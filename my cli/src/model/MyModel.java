@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
-
 import controller.MyController;
 import algorithms.mazeGenerators.Maze3d;
 /***
@@ -41,6 +40,10 @@ public class MyModel extends CommonModel {
 		return controller;
 	}
 
+	public void setController(MyController controller) {
+		this.controller = controller;
+	}
+	
 	public HashMap<String, Maze3d> getMazes() {
 		return mazes;
 	}
@@ -70,5 +73,4 @@ public class MyModel extends CommonModel {
 		out.close();
 		
 	}
-	
 }
