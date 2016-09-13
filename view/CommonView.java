@@ -30,14 +30,13 @@ public abstract class CommonView implements View {
 	@Override
 	public void exit() {
 		cli.setRunning(false);
-		
 	}
 	
 	@Override
 	public abstract void start();
 
 	@Override
-	public abstract void displayMessage(String message);
+	public abstract void notify(String message);
 	
 	@Override
 	public void setCommands(HashMap<String,Command> hashCommand){

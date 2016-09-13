@@ -1,23 +1,26 @@
 package controller;
 
-/**
- * SaveMaze class - extends the CommonComand
- * manage the save of maze3d, ask from the model to save the maze
- */
+import java.io.IOException;
 
+/***
+ * save_maze command. Saves maze to file.
+ * @author Itamar
+ *
+ */
 public class SaveMaze extends CommonCommand {
 
-	/**
-	 * SaveMaze constructor
-	 * @param controller - get object of type Controller to work with him
-	 */
-	public SaveMaze(Controller controller) {
+	public SaveMaze(CommonController controller) {
 		super(controller);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void doCommand(String str) {
-		controller.getModel().saveMaze(str);
+	public void doCommand(String cmd) {
+		try {
+			this.controller.getModel().saveMaze(cmd);
+		} catch (IOException e) {
+			this.controller.notify("Invalid path.");
+		}
 	}
 
 }

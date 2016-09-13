@@ -1,16 +1,17 @@
 package controller;
 
 import java.util.HashMap;
-import model.Model;
-import view.View;
 
-/**
- * MyController class extends CommonController
- * manage the side of the controller
+import model.CommonModel;
+import view.CommonView;
+/***
+ * Controller component in MVC. Designed to work with Maze3d.
+ * @author Itamar & Chen
+ *
  */
-
 public class MyController extends CommonController {
-	HashMap<String,Command> hash;
+	
+	private HashMap<String, Command> commands;
 	
 	/**
 	 * MyController constructor - get Model and View
@@ -20,26 +21,23 @@ public class MyController extends CommonController {
 	 * @param view - get object from type View
 	 */
 	
-	public MyController(Model model, View view) {
+	public MyController(CommonModel model, CommonView view) {
 		super(model, view);
-		
-		HashMap<String,Command> hash = new HashMap<String,Command>();
-		hash.put("dir", new Dir(this));
-		hash.put("display", new Display(this));
-		hash.put("generate", new Generate3dMaze(this));
-		hash.put("solve", new Solve(this));
-		hash.put("save", new SaveMaze(this));
-		hash.put("load", new LoadMaze(this));
-		hash.put("maze", new MazeSize(this));
-		hash.put("file", new FileSize(this));
-		hash.put("exit", new Exit(this));
-		
-		view.setCommands(hash);
+		commands.put("dir", new Dir(this));
+		commands.put("display", new Display(this));
+		commands.put("generate", new GenerateMaze(this));
+		commands.put("solve", new Solve(this));
+		commands.put("save", new SaveMaze(this));
+		commands.put("load", new LoadMaze(this));
+		commands.put("display_cross_section", new DisplayCrossSection(this));
+		commands.put("display_solution", new DisplaySolution(this));
+		commands.put("exit", new Exit(this));
+		view.setCommands(commands);
 	}
-
+	
 	@Override
-	public void notify(String message) {
-		this.view.displayMessage(message);
+	public void notify(String name) {
+		this.view.notify(name);
 
 	}
 

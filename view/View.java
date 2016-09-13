@@ -19,7 +19,7 @@ public interface View {
 	 * display the message that get from 
 	 * @param message - get string to view for the client
 	 */
-	void displayMessage(String message);
+	void notify(String message);
 	
 	/**
 	 * exit from the view - close threads and the view

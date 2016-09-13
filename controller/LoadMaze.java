@@ -1,21 +1,26 @@
 package controller;
 
-/**
- * LoadMaze class - extends the CommonComand
- * manage the load of maze3d from file, ask from the model to load the maze
- */
+import java.io.IOException;
 
-public class LoadMaze extends CommonCommand{
-	/**
-	 * LoadMaze constructor
-	 * @param controller - get the controller to work with him.
-	 */
-	public LoadMaze(Controller controller) {
+/***
+ * load_maze command. Loads maze from file.
+ * @author Itamar&Chen
+ *
+ */
+public class LoadMaze extends CommonCommand {
+
+	public LoadMaze(CommonController controller) {
 		super(controller);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void doCommand(String str) {
-		controller.getModel().loadMaze(str);
+	public void doCommand(String cmd) {
+		try {
+			this.controller.getModel().loadMaze(cmd);
+		} catch (IOException e) {
+			this.controller.notify("Invalid path.");
+		}
 	}
+
 }

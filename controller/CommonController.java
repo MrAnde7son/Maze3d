@@ -1,36 +1,26 @@
 package controller;
 
-import model.Model;
-import view.View;
-
-/**
- * CommonController class - implements the Controller interface
- * abstract class
- */
+import model.CommonModel;
+import view.CommonView;
 
 public abstract class CommonController implements Controller {
+
+	protected CommonModel model;
+	protected CommonView view;
 	
-	Model model;
-	View view;
-	
-	/**
-	 * CommonController Constructor - initialize the Model and View that
-	 * the controller work with them
-	 * @param model - get object from type Model
-	 * @param view - get object from type View
-	 */
-	public CommonController(Model model, View view){
+	public CommonController(CommonModel model, CommonView view) {
 		this.model = model;
 		this.view = view;
 	}
 	
 	@Override
-	public Model getModel() { return model; }
+	public abstract void notify(String name);
 	
-	@Override
-	public View getView() {return view; }
-	
-	@Override
-	public abstract void notify(String massage);
+	public CommonModel getModel() {
+		return model;
+	}
 
+	public CommonView getView() {
+		return view;
+	}
 }

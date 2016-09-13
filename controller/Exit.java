@@ -1,24 +1,20 @@
 package controller;
 
-/**
- * Exit class - extends the CommonComand
- * manage the exit from the controller, model and the view.
+/***
+ * exit command. Stops the exection of the programs with all its threads.
+ * @author Itamar&Chen
+ *
  */
-
 public class Exit extends CommonCommand {
 
-	/**
-	 * Exit constructor
-	 * @param controller - set the controller to work with him
-	 */
-	public Exit(Controller controller) {
+	public Exit(CommonController controller) {
 		super(controller);
 	}
 
 	@Override
-	public void doCommand(String str) {
-		controller.getModel().exit();
-		controller.getView().exit();
+	public void doCommand(String cmd) {
+		this.controller.getModel().exit();
+		this.controller.getModel().exit();
 	}
 
 }
