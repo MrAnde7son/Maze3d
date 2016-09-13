@@ -5,8 +5,8 @@ import view.CommonView;
 
 public abstract class CommonController implements Controller {
 
-	private CommonModel model;
-	private CommonView view;
+	protected CommonModel model;
+	protected CommonView view;
 	
 	public CommonController(CommonModel model, CommonView view) {
 		this.model = model;
@@ -19,7 +19,6 @@ public abstract class CommonController implements Controller {
 	public CommonModel getModel() {
 		return model;
 	}
-
 
 	public CommonView getView() {
 		return view;

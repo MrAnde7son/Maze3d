@@ -6,12 +6,20 @@ import model.CommonModel;
 import view.CommonView;
 /***
  * Controller component in MVC. Designed to work with Maze3d.
- * @author Itamar
+ * @author Itamar & Chen
  *
  */
 public class MyController extends CommonController {
 	
 	private HashMap<String, Command> commands;
+	
+	/**
+	 * MyController constructor - get Model and View
+	 * initialize the model and view in the CommonController
+	 * create the HashMap from String to Command
+	 * @param model - get object from type Model
+	 * @param view - get object from type View
+	 */
 	
 	public MyController(CommonModel model, CommonView view) {
 		super(model, view);
@@ -24,14 +32,13 @@ public class MyController extends CommonController {
 		commands.put("display_cross_section", new DisplayCrossSection(this));
 		commands.put("display_solution", new DisplaySolution(this));
 		commands.put("exit", new Exit(this));
+		view.setCommands(commands);
 	}
 	
 	@Override
 	public void notify(String name) {
-		// TODO Auto-generated method stub
+		this.view.notify(name);
 
 	}
-
-
 
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /*
  * Represents a 3D Maze
- * Written by Itamar Mizrahi
+ * Written by Itamar & Chen
 */
 public class Maze3d {
 	
@@ -32,6 +32,7 @@ public class Maze3d {
 		this.z = 2 * z + 1;
 		this.maze = new int[this.x][this.y][this.z];
 		this.fillWalls();
+		
 		startPosition = null;
 		goalPosition = null;
 	}
@@ -181,85 +182,97 @@ public class Maze3d {
 	}
 	
 	// Fills the walls within the maze
-		public void fillWalls()
-		{
-			for(int i=0;i<this.x;i++)
-				for(int j=0;j<this.y;j++)
-					for(int k=0;k<this.z;k++)
-						this.setWall(i, j, k);
-		}
-		
-	// Fills the surrounded walls
-		public void surroundWalls()
-		{
-			for(int i = 0;i < this.x;i++)
-				for(int j = 0;j < this.y;j++)
-					this.maze[i][j][0] = WALL;
-			for(int i = 0;i < this.x;i++)
-				for(int j = 0;j < this.y;j++)
-					this.maze[i][j][this.z - 1] = WALL;
-			for(int i = 0;i < this.x;i++)
-				for(int j = 0;j < this.z;j++)
-					this.maze[i][0][j] = WALL;
-			for(int i = 0;i < this.x;i++)
-				for(int j = 0;j < this.z;j++)
-					this.maze[i][this.y - 1][j] = WALL;
-			for(int i = 0;i < this.y;i++)
-				for(int j = 0;j < this.z;j++)
-					this.maze[0][i][j] = WALL;
-			for(int i = 0;i < this.y;i++)
-				for(int j = 0;j < this.z;j++)
-					this.maze[this.x - 1][i][j] = WALL;
-		}
-		
-		@Override
-		public String toString() {
-			String maze = "";
-			for(int i = 0;i < this.x; i++) {
-				for(int j = 0;j < this.y; j++) {
-					for(int k = 0;k < this.z; k++) {
-						maze += this.maze[i][j][k] + " ";
-					}
-					maze += "\r\n";
+	public void fillWalls()
+	{
+		for(int i=0;i<this.x;i++)
+			for(int j=0;j<this.y;j++)
+				for(int k=0;k<this.z;k++)
+					this.setWall(i, j, k);
+	}
+	
+// Fills the surrounded walls
+	public void surroundWalls()
+	{
+		for(int i = 0;i < this.x;i++)
+			for(int j = 0;j < this.y;j++)
+				this.maze[i][j][0] = WALL;
+		for(int i = 0;i < this.x;i++)
+			for(int j = 0;j < this.y;j++)
+				this.maze[i][j][this.z - 1] = WALL;
+		for(int i = 0;i < this.x;i++)
+			for(int j = 0;j < this.z;j++)
+				this.maze[i][0][j] = WALL;
+		for(int i = 0;i < this.x;i++)
+			for(int j = 0;j < this.z;j++)
+				this.maze[i][this.y - 1][j] = WALL;
+		for(int i = 0;i < this.y;i++)
+			for(int j = 0;j < this.z;j++)
+				this.maze[0][i][j] = WALL;
+		for(int i = 0;i < this.y;i++)
+			for(int j = 0;j < this.z;j++)
+				this.maze[this.x - 1][i][j] = WALL;
+	}
+	
+	@Override
+	public String toString() {
+		String maze = "";
+		for(int i = 0;i < this.x; i++) {
+			for(int j = 0;j < this.y; j++) {
+				for(int k = 0;k < this.z; k++) {
+					maze += this.maze[i][j][k] + " ";
 				}
-				maze += "\r\n\r\n\r\n";
+				maze += "\r\n";
 			}
-					
-			return maze;
+			maze += "\r\n\r\n\r\n";
 		}
-		
-		public byte[] toByteArray() {
-			
-			ArrayList<Byte> byteArrayList = new ArrayList<Byte>();
-			byteArrayList.add((byte)this.x);
-			byteArrayList.add((byte)this.y);
-			byteArrayList.add((byte)this.z);
-			byteArrayList.add((byte)this.startPosition.getX());
-			byteArrayList.add((byte)this.startPosition.getY());
-			byteArrayList.add((byte)this.startPosition.getZ());
-			byteArrayList.add((byte)this.goalPosition.getX());
-			byteArrayList.add((byte)this.goalPosition.getY());
-			byteArrayList.add((byte)this.goalPosition.getZ());
-			
-			
-			for (int z = 0; z < this.x; z++) {
-				for (int y = 0; y < this.y; y++) {
-					for (int x = 0; x < this.z; x++)
-						byteArrayList.add((byte)maze[x][y][z]);
+				
+		return maze;
+	}
+	
+	public void printMaze() {
+		for(int i = 0;i < this.x; i++) {
+			for(int j = 0;j < this.y; j++) {
+				for(int k = 0;k < this.z; k++) {
+					System.out.println(this.maze[i][j][k] + " ");
 				}
+				System.out.println("\r\n");
 			}
-			
-			//Copy the array list to array of bytes
-			byte[] bytes = new byte[byteArrayList.size()];
-			for (int i=0;i<byteArrayList.size(); i++) {
-				bytes[i] = byteArrayList.get(i);
-			}
-			
-			return bytes;
+			System.out.println("\r\n\r\n\r\n");
 		}
+	}
+	
+	public byte[] toByteArray() {
+		
+		ArrayList<Byte> byteArrayList = new ArrayList<Byte>();
+		byteArrayList.add((byte)this.x);
+		byteArrayList.add((byte)this.y);
+		byteArrayList.add((byte)this.z);
+		byteArrayList.add((byte)this.startPosition.getX());
+		byteArrayList.add((byte)this.startPosition.getY());
+		byteArrayList.add((byte)this.startPosition.getZ());
+		byteArrayList.add((byte)this.goalPosition.getX());
+		byteArrayList.add((byte)this.goalPosition.getY());
+		byteArrayList.add((byte)this.goalPosition.getZ());
 		
 		
-		public void setCell(Position p) {
-			this.maze[p.getX()][p.getY()][p.getZ()] = 2;
+		for (int z = 0; z < this.x; z++) {
+			for (int y = 0; y < this.y; y++) {
+				for (int x = 0; x < this.z; x++)
+					byteArrayList.add((byte)maze[x][y][z]);
+			}
 		}
+		
+		//Copy the array list to array of bytes
+		byte[] bytes = new byte[byteArrayList.size()];
+		for (int i=0;i<byteArrayList.size(); i++) {
+			bytes[i] = byteArrayList.get(i);
+		}
+		
+		return bytes;
+	}
+	
+	
+	public void setCell(Position p) {
+		this.maze[p.getX()][p.getY()][p.getZ()] = 2;
+	}
 }

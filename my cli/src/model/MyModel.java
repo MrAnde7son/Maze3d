@@ -14,17 +14,16 @@ import controller.MyController;
 import algorithms.mazeGenerators.Maze3d;
 /***
  * Model component in MVC. Designed to work with Maze3d.
- * @author Itamar&Erlich
+ * @author Itamar&Chen
  *
  */
 public class MyModel extends CommonModel {
 	
-	private MyController controller;
-	HashMap<String,Maze3d> mazes;
+	protected MyController controller;
+	protected HashMap<String,Maze3d> mazes;
 	
 	public MyModel(){
 		this.mazes = new HashMap<>();
-		
 	}
 	
 	@Override

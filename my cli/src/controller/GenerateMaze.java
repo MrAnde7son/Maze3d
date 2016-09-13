@@ -6,7 +6,7 @@ import algorithms.mazeGenerators.Maze3d;
 
 /***
  * generate_maze command. Generate a new instance of Maze3d.
- * @author Itamar&Erlich
+ * @author Itamar&Chen
  *
  */
 public class GenerateMaze extends CommonCommand {

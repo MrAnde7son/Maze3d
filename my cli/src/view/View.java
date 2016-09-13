@@ -1,17 +1,40 @@
 package view;
 
 import java.util.HashMap;
-
-import algorithms.mazeGenerators.Maze3d;
 import controller.Command;
-/***
- * View component in MVC.
- * @author Itamar
- *
+import controller.Controller;
+
+/**
+ * View Interface
+ * set the functional of the view side
  */
+
 public interface View {
-	public abstract void notify(String name);
-	public abstract void display(Maze3d maze);
-	public abstract void setCommands(HashMap<String,Command> commands);
-	public void exit();
+	/**
+	 * start the view side
+	 */
+	void start();
+	
+	/**
+	 * display the message that get from 
+	 * @param message - get string to view for the client
+	 */
+	void notify(String message);
+	
+	/**
+	 * exit from the view - close threads and the view
+	 */
+	void exit();
+	
+	/**
+	 * set the HashMap that mapped between strings and commands
+	 * @param hashCommand
+	 */
+	void setCommands(HashMap<String,Command> hashCommand);
+	
+	/**
+	 * set the controller that work with the view
+	 * @param controller - get object of controller
+	 */
+	void setController(Controller controller);
 }

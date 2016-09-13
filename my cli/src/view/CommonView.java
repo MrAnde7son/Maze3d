@@ -1,23 +1,45 @@
 package view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.HashMap;
-
-import algorithms.mazeGenerators.Maze3d;
 import controller.Command;
+import controller.Controller;
+
+/**
+ * CommonView - implements View
+ * abstract class of the view size
+ */
 
 public abstract class CommonView implements View {
 
-	@Override
-	public abstract void notify(String name);
+	Controller controller;
+	CLI cli;
+	HashMap<String,Command> hashCommand;
+	BufferedReader in;
+	PrintWriter out;
 
-	@Override
-	public abstract void display(Maze3d maze);
-
-	@Override
-	public abstract void setCommands(HashMap<String, Command> commands);
+	/*
+	 * set the controller that work with the view
+	 *
+	 */
+	public void setController(Controller controller){
+		this.controller = controller;
+	}
 	
 	@Override
-	public void exit(){
-		// TODO exit all threads 
+	public void exit() {
+		cli.setRunning(false);
+	}
+	
+	@Override
+	public abstract void start();
+
+	@Override
+	public abstract void notify(String message);
+	
+	@Override
+	public void setCommands(HashMap<String,Command> hashCommand){
+		this.hashCommand = hashCommand;
 	}
 }

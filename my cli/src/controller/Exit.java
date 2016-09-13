@@ -2,7 +2,7 @@ package controller;
 
 /***
  * exit command. Stops the exection of the programs with all its threads.
- * @author Itamar&Erlich
+ * @author Itamar&Chen
  *
  */
 public class Exit extends CommonCommand {

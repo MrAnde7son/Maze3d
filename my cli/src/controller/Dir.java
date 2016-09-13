@@ -4,7 +4,7 @@ import java.io.File;
 
 /***
  * dir command. Lists all files and folders on a given path.
- * @author Itamar&Erlich
+ * @author Itamar&Chen
  *
  */
 public class Dir extends CommonCommand {

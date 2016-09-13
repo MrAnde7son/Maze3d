@@ -4,7 +4,7 @@ import algorithms.mazeGenerators.Maze3d;
 
 /***
  * display command. Displays a given maze by its name.
- * @author Itamar&Erlich
+ * @author Itamar&Chen
  *
  */
 public class Display extends CommonCommand {

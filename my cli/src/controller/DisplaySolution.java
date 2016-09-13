@@ -2,7 +2,7 @@ package controller;
 
 /***
  * display_solution command. Displays the solution of a maze by its name.
- * @author Itamar&Erlich
+ * @author Itamar & Chen
  *
  */
 public class DisplaySolution extends CommonCommand {
@@ -13,8 +13,9 @@ public class DisplaySolution extends CommonCommand {
 
 	@Override
 	public void doCommand(String cmd) {
-		// TODO Auto-generated method stub
-		
+		String[] params = cmd.split(" ");
+		String name = params[0];
+		System.out.println(this.controller.getModel().getData(name).toString());
 	}
 
 }
