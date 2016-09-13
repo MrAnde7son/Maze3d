@@ -1,40 +1,29 @@
 package controller;
 
-/**
- * Generate3dMaze class - extends the CommonComand
- * manage the create of maze3d, ask from the model to create the maze
- */
+import model.MyModel;
+import algorithms.mazeGenerators.GrowingTreeGenerator;
+import algorithms.mazeGenerators.Maze3d;
 
+/***
+ * generate_maze command. Generate a new instance of Maze3d.
+ * @author Itamar&Chen
+ *
+ */
 public class GenerateMaze extends CommonCommand {
 
-	/**
-	 * Generate3dMaze constructor 
-	 * @param controller - get object of type Controller
-	 */
-	public GenerateMaze(Controller controller) {
+	public GenerateMaze(CommonController controller){
 		super(controller);
 	}
 
 	@Override
-	public void doCommand(String str) {
-		String[] parm = str.split(" ");
+	public void doCommand(String cmd) {
+		String[] params = cmd.split(" ");
+		String name = params[0];
+		// TODO perform in separated thread
+		Maze3d maze = (new GrowingTreeGenerator()).generate(Integer.parseInt(params[1]), Integer.parseInt(params[2]), Integer.parseInt(params[3]));
+		((MyModel)this.controller.getModel()).addMaze(name, maze);
+		this.controller.notify("maze " + name + " is ready!");
 		
-		if(parm.length != 6)
-			controller.notify("Invalid Command");
-		else{
-			int x = 0,y = 0,z = 0;
-			try{
-				x = Integer.parseInt(parm[3]);
-				y = Integer.parseInt(parm[4]);
-				z = Integer.parseInt(parm[5]);
-			}
-			catch (NumberFormatException e){
-				controller.notify("Invalid Command");
-			}
-			
-			controller.getModel().generate(parm[2], x, y, z);
-			
-		}
 	}
 
 }

@@ -2,44 +2,30 @@ package controller;
 
 import java.io.File;
 
-
 /***
  * dir command. Lists all files and folders on a given path.
- * @author Itamar
+ * @author Itamar&Chen
  *
  */
-public class Dir extends CommonCommand{
+public class Dir extends CommonCommand {
+
+	private File file;
 	
-	/**
-	 * Dir constructor
-	 * @param controller - get the controller to work with him
-	 */
-	public Dir(Controller controller) {
+	public Dir(CommonController controller) {
 		super(controller);
 	}
-
+	
 	@Override
-	public void doCommand(String str) {
-		try {
-			File file = new File(str);	
-			String[] string = file.list();
-			String list = "";
-			
-			for(int i = 0; i <string.length; i++)
-				list += string[i] + '\n';
-			
-			controller.notify(list);
+	public void doCommand(String cmd) {
+		try{
+			file = new File(cmd);
+			String[] list = file.list();
+			for(String str: list)
+				System.out.println(str + '\t');
 		}
-		catch (NullPointerException e){
-			controller.notify("Invalid path");
+		catch(NullPointerException e){
+			controller.notify("Invalid path.");
 		}
-		
 	}
+
 }
-
-
-//@Override
-//public void doCommand() {
-//	String[] list = file.list();
-//	for(String str: list)
-//		System.out.println(str + '\t');
