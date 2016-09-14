@@ -9,8 +9,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
+
 import controller.MyController;
 import algorithms.mazeGenerators.Maze3d;
+import algorithms.mazeGenerators.Position;
+import algorithms.search.Solution;
 /***
  * Model component in MVC. Designed to work with Maze3d.
  * @author Itamar&Chen
@@ -20,9 +23,11 @@ public class MyModel extends CommonModel {
 	
 	protected MyController controller;
 	protected HashMap<String,Maze3d> mazes;
+	protected HashMap<String, Solution<Position>> solutions;
 	
 	public MyModel(){
 		this.mazes = new HashMap<>();
+		this.solutions = new HashMap<>();
 	}
 	
 	@Override
@@ -50,6 +55,14 @@ public class MyModel extends CommonModel {
 
 	public void addMaze(String name,Maze3d maze){
 		this.mazes.put(name, maze);
+	}
+	
+	public void addSolution(String name,Solution<Position> sol){
+		this.solutions.put(name, sol);
+	}
+	
+	public Solution<Position> getSolution(String name){
+		return this.solutions.get(name);
 	}
 	
 	@Override

@@ -3,7 +3,6 @@ package algorithms.demo;
 import algorithms.mazeGenerators.GrowingTreeGenerator;
 import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
-import algorithms.mazeGenerators.SimpleMaze3dGenerator;
 import algorithms.search.BFSSearcher;
 import algorithms.search.DFSSearcher;
 import algorithms.search.Searchable;

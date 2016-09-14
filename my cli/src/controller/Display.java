@@ -1,6 +1,5 @@
 package controller;
 
-import algorithms.mazeGenerators.Maze3d;
 
 /***
  * display command. Displays a given maze by its name.
@@ -15,8 +14,7 @@ public class Display extends CommonCommand {
 
 	@Override
 	public void doCommand(String cmd) {
-		Maze3d maze = this.controller.getModel().getData(cmd);
-		System.out.println(maze);
+		this.controller.getModel().getData(cmd);
 		
 	}
 

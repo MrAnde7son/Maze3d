@@ -22,10 +22,15 @@ public class MyCompressorOutputStream extends OutputStream {
 	
 	@Override
 	public void write(byte[] arr) throws IOException {
-		byte currByte = arr[0];
-		int count = 1;
+		int count = 0;
+		int i = 0;
 		
-		for (int i = 1; i < arr.length; i++) {
+		// Writes the maze coordinations, start and goal positions
+		for(;i<9;i++)
+			out.write(arr[i]);
+		
+		byte currByte = arr[i];
+		for (; i < arr.length; i++) {
 			/*if(count == 255){
 				out.write(255);
 				out.write(currByte);

@@ -13,9 +13,7 @@ public class DisplaySolution extends CommonCommand {
 
 	@Override
 	public void doCommand(String cmd) {
-		String[] params = cmd.split(" ");
-		String name = params[0];
-		System.out.println(this.controller.getModel().getData(name).toString());
+		((MyModel)this.controller.getModel()).getSolution(cmd);
 	}
 
 }
