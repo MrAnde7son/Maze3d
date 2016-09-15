@@ -11,9 +11,13 @@ import java.io.OutputStream;
 import java.util.HashMap;
 
 import controller.MyController;
+import algorithms.demo.Maze3dDomain;
 import algorithms.mazeGenerators.GrowingTreeGenerator;
 import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
+import algorithms.search.BFSSearcher;
+import algorithms.search.DFSSearcher;
+import algorithms.search.Searchable;
 import algorithms.search.Solution;
 /***
  * Model component in MVC. Designed to work with Maze3d.
@@ -35,10 +39,47 @@ public class MyModel extends CommonModel {
 	public void generate(String name, int x, int y, int z) {
 		Maze3d maze = new GrowingTreeGenerator().generate(x, y, z);
 		mazes.put(name, maze);
-		solutions.put(name, value)
 
 	}
-
+	
+	@Override
+	public void generateSolution(String cmd) {
+		String[] parm=cmd.split(" ");
+		
+		if(parm.length != 2){
+			controller.UpdateMessage("Invalid Command");
+			return;
+		}
+		if(parm[1].equalsIgnoreCase("bfs")){
+			Maze3d maze = mazes.get(parm[0]);
+			if(maze != null){
+				BFSSearcher<Position> bfs = new BFSSearcher<Position>();
+				
+				Solution<Position> bfsSolution = bfs.search(new Maze3dDomain(maze));
+				solutions.put(parm[0], bfsSolution);
+				controller.UpdateMessage("Solution for " + parm[0] + " is ready");
+			}
+			else{
+				controller.UpdateMessage("Invalid name");
+			}
+		}
+		else if(parm[1].equalsIgnoreCase("dfs")){
+			Maze3d maze = mazes.get(parm[0]);
+			if(maze != null){
+				DFSSearcher<Position> dfs = new DFSSearcher<Position>();
+				Solution<Position> dfsSolution = dfs.search(new Maze3dDomain(maze));
+				solutions.put(parm[0], dfsSolution);
+				controller.UpdateMessage("Solution for " + parm[0] + " is ready");
+			}
+			else{
+				controller.UpdateMessage("Invalid name");
+			}
+		}
+		else
+			controller.UpdateMessage("Invalid algorithm");
+		
+	}
+	
 	@Override
 	public Maze3d getData(String name) {
 		return this.mazes.get(name);

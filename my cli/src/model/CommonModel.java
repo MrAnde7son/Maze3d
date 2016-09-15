@@ -3,6 +3,8 @@ package model;
 import java.io.IOException;
 
 import algorithms.mazeGenerators.Maze3d;
+import algorithms.mazeGenerators.Position;
+import algorithms.search.Solution;
 
 public abstract class CommonModel implements Model {
 
@@ -17,6 +19,11 @@ public abstract class CommonModel implements Model {
 		// TODO exit all threads 
 	}
 	
+	@Override	
+	public abstract Solution<Position> getSolution(String name);
+	
+	@Override
+	public abstract void generateSolution(String cmd);
 	/**
 	 * Compresses and saves maze to file. 
 	 */
