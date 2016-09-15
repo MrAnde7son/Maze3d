@@ -22,7 +22,7 @@ public class GenerateMaze extends CommonCommand {
 		// TODO perform in separated thread
 		Maze3d maze = (new GrowingTreeGenerator()).generate(Integer.parseInt(params[1]), Integer.parseInt(params[2]), Integer.parseInt(params[3]));
 		((MyModel)this.controller.getModel()).addMaze(name, maze);
-		this.controller.notify("maze " + name + " is ready!");
+		this.controller.UpdateMessage("maze " + name + " is ready!");
 		
 	}
 

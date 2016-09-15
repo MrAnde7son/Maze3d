@@ -19,9 +19,9 @@ public class DisplaySolution extends CommonCommand {
 	public void doCommand(String cmd) {
 		Solution<Position> solution = ((MyModel)controller.getModel()).getSolution(cmd);
 		if(solution == null)
-			controller.notify("No solution for " + cmd + " maze");
+			controller.UpdateMessage("No solution for " + cmd + " maze");
 		else
-			controller.notify(solution.toString());
+			controller.UpdateMessage(solution.toString());
 	}
 
 }

@@ -19,7 +19,7 @@ public class SaveMaze extends CommonCommand {
 		try {
 			this.controller.getModel().saveMaze(cmd);
 		} catch (IOException e) {
-			this.controller.notify("Invalid path.");
+			this.controller.UpdateMessage("Invalid path.");
 		}
 	}
 

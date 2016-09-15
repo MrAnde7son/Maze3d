@@ -19,7 +19,7 @@ public class LoadMaze extends CommonCommand {
 		try {
 			this.controller.getModel().loadMaze(cmd);
 		} catch (IOException e) {
-			this.controller.notify("Invalid path.");
+			this.controller.UpdateMessage("Invalid path.");
 		}
 	}
 

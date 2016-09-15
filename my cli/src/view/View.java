@@ -12,7 +12,7 @@ import controller.Controller;
 public interface View {
 	
 	void start();
-	void notify(String message);
+	void UpdateMessage(String message);
 	void exit();
 	void setCommands(HashMap<String,Command> hashCommand);
 	void setController(Controller controller);

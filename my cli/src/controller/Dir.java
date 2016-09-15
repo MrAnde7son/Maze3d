@@ -24,7 +24,7 @@ public class Dir extends CommonCommand {
 				System.out.println(str + '\t');
 		}
 		catch(NullPointerException e){
-			controller.notify("Invalid path.");
+			controller.UpdateMessage("Invalid path.");
 		}
 	}
 

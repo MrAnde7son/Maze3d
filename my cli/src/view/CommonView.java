@@ -43,7 +43,7 @@ public abstract class CommonView implements View {
 	public abstract void start();
 
 	@Override
-	public abstract void notify(String message);
+	public abstract void UpdateMessage(String message);
 	
 	@Override
 	public void setCommands(HashMap<String,Command> hashCommand){

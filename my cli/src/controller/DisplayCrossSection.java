@@ -21,11 +21,11 @@ public class DisplayCrossSection extends CommonCommand {
 		
 		switch(axis){
 			case("x"):
-				this.controller.notify(controller.getModel().getData(name).getCrossSectionByX(num).toString());
+				this.controller.UpdateMessage(controller.getModel().getData(name).getCrossSectionByX(num).toString());
 			case("y"):
-				this.controller.notify(controller.getModel().getData(name).getCrossSectionByY(num).toString());
+				this.controller.UpdateMessage(controller.getModel().getData(name).getCrossSectionByY(num).toString());
 			case("z"):
-				this.controller.notify(controller.getModel().getData(name).getCrossSectionByZ(num).toString());
+				this.controller.UpdateMessage(controller.getModel().getData(name).getCrossSectionByZ(num).toString());
 		}
 	}
 

@@ -36,7 +36,7 @@ public class Solve extends CommonCommand {
 		}
 		
 		((MyModel)this.controller.getModel()).addSolution(name, sol);
-		this.controller.notify("Solution for " + name + " is ready.");
+		this.controller.UpdateMessage("Solution for " + name + " is ready.");
 	}
 
 }

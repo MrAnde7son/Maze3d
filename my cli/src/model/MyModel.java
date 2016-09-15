@@ -11,6 +11,7 @@ import java.io.OutputStream;
 import java.util.HashMap;
 
 import controller.MyController;
+import algorithms.mazeGenerators.GrowingTreeGenerator;
 import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
@@ -32,7 +33,9 @@ public class MyModel extends CommonModel {
 	
 	@Override
 	public void generate(String name, int x, int y, int z) {
-		// TODO Auto-generated method stub
+		Maze3d maze = new GrowingTreeGenerator().generate(x, y, z);
+		mazes.put(name, maze);
+		solutions.put(name, value)
 
 	}
 

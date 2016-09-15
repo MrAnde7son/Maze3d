@@ -21,8 +21,8 @@ public class MyView extends CommonView {
 	}
 	
 	@Override
-	public void notify(String name) {
-		this.controller.notify(name);
+	public void UpdateMessage(String name) {
+		this.controller.UpdateMessage(name);
 	}
 	
 	@Override

@@ -14,7 +14,7 @@ public abstract class CommonController implements Controller {
 	}
 	
 	@Override
-	public abstract void notify(String name);
+	public abstract void UpdateMessage(String name);
 	
 	public Model getModel() {
 		return model;

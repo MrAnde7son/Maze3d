@@ -37,8 +37,8 @@ public class MyController extends CommonController {
 	}
 	
 	@Override
-	public void notify(String name) {
-		this.view.notify(name);
+	public void UpdateMessage(String name) {
+		this.view.UpdateMessage(name);
 
 	}
 
