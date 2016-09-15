@@ -14,10 +14,10 @@ import controller.MyController;
  */
 public class MyView extends CommonView {
 
-	//private MyController controller;
+	private MyController controller;
 	
 	public MyView(BufferedReader in, PrintWriter out){
-		super(in,out);	
+		super(in,out);
 	}
 	
 	@Override

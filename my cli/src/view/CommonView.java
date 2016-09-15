@@ -22,7 +22,7 @@ public abstract class CommonView implements View {
 	public CommonView(BufferedReader in,PrintWriter out) {
 		this.in = in;
 		this.out = out;
-		hashCommand = new HashMap<>();
+		this.hashCommand = new HashMap<>();
 		
 	}
 	
