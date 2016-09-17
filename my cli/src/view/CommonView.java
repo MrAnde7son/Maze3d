@@ -6,11 +6,11 @@ import java.util.HashMap;
 import controller.Command;
 import controller.Controller;
 
-/**
- * CommonView - implements View
- * abstract class of the view size
+/***
+ * Abstract class for View types.
+ * @author Itamar&Chen
+ *
  */
-
 public abstract class CommonView implements View {
 
 	protected Controller controller;
@@ -23,7 +23,6 @@ public abstract class CommonView implements View {
 		this.in = in;
 		this.out = out;
 		this.hashCommand = new HashMap<>();
-		
 	}
 	
 	/*
@@ -32,6 +31,9 @@ public abstract class CommonView implements View {
 	 */
 	public void setController(Controller controller){
 		this.controller = controller;
+	}
+	public Controller getController() {
+		return controller;
 	}
 	
 	@Override

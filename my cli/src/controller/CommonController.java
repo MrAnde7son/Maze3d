@@ -2,7 +2,11 @@ package controller;
 
 import model.Model;
 import view.View;
-
+/***
+ * Abstract class for Controller types.
+ * @author Itamar&Chen
+ *
+ */
 public abstract class CommonController implements Controller {
 
 	protected Model model;

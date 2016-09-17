@@ -33,13 +33,16 @@ public class MyController extends CommonController {
 		commands.put("display_cross_section", new DisplayCrossSection(this));
 		commands.put("display_solution", new DisplaySolution(this));
 		commands.put("exit", new Exit(this));
-		view.setCommands(commands);
 	}
 	
 	@Override
 	public void UpdateMessage(String name) {
 		this.view.UpdateMessage(name);
 
+	}
+	
+	public HashMap<String, Command> getCommands(){
+		return this.commands;
 	}
 
 }

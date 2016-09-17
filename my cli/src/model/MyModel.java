@@ -17,7 +17,6 @@ import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.BFSSearcher;
 import algorithms.search.DFSSearcher;
-import algorithms.search.Searchable;
 import algorithms.search.Solution;
 /***
  * Model component in MVC. Designed to work with Maze3d.

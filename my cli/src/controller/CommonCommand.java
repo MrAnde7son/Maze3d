@@ -1,5 +1,9 @@
 package controller;
-
+/***
+ * Abstract class for Command types.
+ * @author Itamar&Chen
+ *
+ */
 public abstract class CommonCommand implements Command {
 
 	protected CommonController controller;

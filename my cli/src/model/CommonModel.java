@@ -5,7 +5,11 @@ import java.io.IOException;
 import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
-
+/***
+ * Abstract class for Model types.
+ * @author Itamar&Chen
+ *
+ */
 public abstract class CommonModel implements Model {
 
 	@Override

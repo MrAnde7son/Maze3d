@@ -2,9 +2,7 @@ package view;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.HashMap;
 
-import controller.Command;
 import controller.Controller;
 import controller.MyController;
 /***
@@ -14,8 +12,6 @@ import controller.MyController;
  */
 public class MyView extends CommonView {
 
-	private MyController controller;
-	
 	public MyView(BufferedReader in, PrintWriter out){
 		super(in,out);
 	}
@@ -32,12 +28,9 @@ public class MyView extends CommonView {
 	}
 	
 	@Override
-	public void setCommands(HashMap<String, Command> commands) {
-		((MyController)this.controller).getView().setCommands(commands);
+	public void setController(Controller controller){
+		this.controller = controller;
+		this.hashCommand = ((MyController)controller).getCommands();
 	}
-
-	public Controller getController() {
-		return controller;
-	}
-
+	
 }
