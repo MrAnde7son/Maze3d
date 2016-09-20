@@ -7,9 +7,9 @@ import java.io.IOException;
  * @author Itamar
  *
  */
-public class SaveMaze extends CommonCommand {
+public class SaveMazeCommand extends CommonCommand {
 
-	public SaveMaze(CommonController controller) {
+	public SaveMazeCommand(CommonController controller) {
 		super(controller);
 		// TODO Auto-generated constructor stub
 	}

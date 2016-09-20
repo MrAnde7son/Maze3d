@@ -5,9 +5,9 @@ package controller;
  * @author Itamar&Chen
  *
  */
-public class Exit extends CommonCommand {
+public class ExitCommand extends CommonCommand {
 
-	public Exit(CommonController controller) {
+	public ExitCommand(CommonController controller) {
 		super(controller);
 	}
 

@@ -13,9 +13,9 @@ import model.MyModel;
  * @author Itamar
  *
  */
-public class Solve extends CommonCommand {
+public class SolveCommand extends CommonCommand {
 
-	public Solve(CommonController controller) {
+	public SolveCommand(CommonController controller) {
 		super(controller);
 		// TODO Auto-generated constructor stub
 	}

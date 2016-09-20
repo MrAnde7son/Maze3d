@@ -9,9 +9,9 @@ import algorithms.mazeGenerators.Maze3d;
  * @author Itamar&Chen
  *
  */
-public class GenerateMaze extends CommonCommand {
+public class GenerateMazeCommand extends CommonCommand {
 
-	public GenerateMaze(CommonController controller){
+	public GenerateMazeCommand(CommonController controller){
 		super(controller);
 	}
 

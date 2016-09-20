@@ -6,9 +6,9 @@ package controller;
  * @author Itamar&Chen
  *
  */
-public class DisplayCrossSection extends CommonCommand {
+public class DisplayCrossSectionCommand extends CommonCommand {
 
-	public DisplayCrossSection(CommonController controller) {
+	public DisplayCrossSectionCommand(CommonController controller) {
 		super(controller);
 	}
 

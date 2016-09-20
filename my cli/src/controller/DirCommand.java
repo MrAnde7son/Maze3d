@@ -7,11 +7,11 @@ import java.io.File;
  * @author Itamar&Chen
  *
  */
-public class Dir extends CommonCommand {
+public class DirCommand extends CommonCommand {
 
 	private File file;
 	
-	public Dir(CommonController controller) {
+	public DirCommand(CommonController controller) {
 		super(controller);
 	}
 	

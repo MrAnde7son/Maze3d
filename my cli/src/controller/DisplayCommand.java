@@ -6,9 +6,9 @@ package controller;
  * @author Itamar&Chen
  *
  */
-public class Display extends CommonCommand {
+public class DisplayCommand extends CommonCommand {
 
-	public Display(CommonController controller) {
+	public DisplayCommand(CommonController controller) {
 		super(controller);
 	}
 

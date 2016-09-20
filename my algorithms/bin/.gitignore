@@ -1,6 +1,7 @@
-/algorithms/
-/boot/
-/controller/
-/io/
-/model/
-/view/
+/bin
+/src
+/boot
+/controller
+/model
+/presenter
+/view

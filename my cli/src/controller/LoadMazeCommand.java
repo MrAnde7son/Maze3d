@@ -7,9 +7,9 @@ import java.io.IOException;
  * @author Itamar&Chen
  *
  */
-public class LoadMaze extends CommonCommand {
+public class LoadMazeCommand extends CommonCommand {
 
-	public LoadMaze(CommonController controller) {
+	public LoadMazeCommand(CommonController controller) {
 		super(controller);
 		// TODO Auto-generated constructor stub
 	}

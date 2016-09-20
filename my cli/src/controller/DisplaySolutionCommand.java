@@ -9,9 +9,9 @@ import model.MyModel;
  * @author Itamar & Chen
  *
  */
-public class DisplaySolution extends CommonCommand {
+public class DisplaySolutionCommand extends CommonCommand {
 
-	public DisplaySolution(CommonController controller) {
+	public DisplaySolutionCommand(CommonController controller) {
 		super(controller);
 	}
 

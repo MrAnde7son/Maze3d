@@ -24,15 +24,15 @@ public class MyController extends CommonController {
 	public MyController(Model model, View view) {
 		super(model, view);
 		commands = new HashMap<>();
-		commands.put("dir", new Dir(this));
-		commands.put("display", new Display(this));
-		commands.put("generate", new GenerateMaze(this));
-		commands.put("solve", new Solve(this));
-		commands.put("save", new SaveMaze(this));
-		commands.put("load", new LoadMaze(this));
-		commands.put("display_cross_section", new DisplayCrossSection(this));
-		commands.put("display_solution", new DisplaySolution(this));
-		commands.put("exit", new Exit(this));
+		commands.put("dir", new DirCommand(this));
+		commands.put("display", new DisplayCommand(this));
+		commands.put("generate", new GenerateMazeCommand(this));
+		commands.put("solve", new SolveCommand(this));
+		commands.put("save", new SaveMazeCommand(this));
+		commands.put("load", new LoadMazeCommand(this));
+		commands.put("display_cross_section", new DisplayCrossSectionCommand(this));
+		commands.put("display_solution", new DisplaySolutionCommand(this));
+		commands.put("exit", new ExitCommand(this));
 	}
 	
 	@Override
