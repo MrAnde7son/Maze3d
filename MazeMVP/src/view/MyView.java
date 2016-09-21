@@ -5,8 +5,8 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Observable;
 import java.util.Observer;
-
 import algorithms.mazeGenerators.Maze3d;
+
 /***
  * Implementation of View in MVP for Maze3d.
  * @author Itamar&Chen

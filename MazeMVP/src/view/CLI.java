@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Observable;
 
 /***
- * CLI using MVP architecture.
+ * CLI in MVP architecture.
  * @author Itamar&Chen
  *
  */
@@ -21,11 +21,7 @@ public class CLI extends Observable {
 	}
 	
 	private void printMenu() {
-		out.print("Choose command: (");
-		/*for (String command : commands.keySet()) {
-			out.print(command + ",");
-		}
-		out.println(")");*/
+		out.print("Choose command: ");
 		out.flush();
 	}
 	
