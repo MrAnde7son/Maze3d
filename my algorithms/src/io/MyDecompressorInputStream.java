@@ -24,10 +24,7 @@ public class MyDecompressorInputStream extends InputStream {
 	@Override
 	public int read(byte[] arr) throws IOException {
 		int k = 0;
-		// Reads the maze coordinations, start and goal positions
-		for(;k<9;k++)
-			in.read();
-		
+
 		while (k < arr.length) {
 			byte count = (byte) in.read();
 			byte b = (byte) in.read();

@@ -180,6 +180,9 @@ public class Maze3d {
 	public int[][][] getMaze() {
 		return maze;
 	}
+	public void setMaze(int[][][] maze){
+		this.maze = maze;
+	}
 	
 	// Fills the walls within the maze
 	public void fillWalls()
