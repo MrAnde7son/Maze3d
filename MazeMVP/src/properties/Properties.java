@@ -14,7 +14,10 @@ public class Properties implements Serializable {
 	private int x,y,z;
 	
 	public Properties() {
-		// TODO default properties
+		this.numOfThreads = 5;
+		this.generateMazeAlgorithm = "GrowingTree";
+		this.solveMazeAlgorithm = "BFS";
+		this.x = this.y = this.z = 5;
 	}
 			
 	public int getNumOfThreads() {
@@ -59,7 +62,4 @@ public class Properties implements Serializable {
 	public void setZ(int z) {
 		this.z = z;
 	}
-	
-	
-	
 }

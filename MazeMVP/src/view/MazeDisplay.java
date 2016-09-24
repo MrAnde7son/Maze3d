@@ -2,9 +2,14 @@ package view;
 
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Shell;
+
+import algorithms.mazeGenerators.Maze3d;
+import algorithms.mazeGenerators.Position;
+import algorithms.search.Solution;
 
 /***
  * MazeDisplay
@@ -13,18 +18,43 @@ import org.eclipse.swt.widgets.Shell;
  */
 public class MazeDisplay extends Canvas {
 	
-	private int[][] mazeData;
+	private Maze3d maze;
+	private Position currPos;
+	private Solution<Position> solution;
 	
-	public void setMazeData(int[][] mazeData) {
-		this.mazeData = mazeData;
-		this.redraw();
+	public Maze3d getMaze() {
+		return maze;
+	}
+
+	public void setMaze(Maze3d maze) {
+		this.maze = maze;
 	}
 	
+	public void setMazeData(int[][][] maze) {
+		this.maze.setMaze(maze);
+	}
+
+	public Position getCurrPos() {
+		return currPos;
+	}
+
+	public void setCurrPos(Position currPos) {
+		this.currPos = currPos;
+	}
+
+	public Solution<Position> getSolution() {
+		return solution;
+	}
+
+	public void setSolution(Solution<Position> solution) {
+		this.solution = solution;
+	}
+
 	public MazeDisplay(Shell parent, int style) {
 		super(parent, style);
+		this.currPos = new Position(0,0,0);
 		
-		this.addPaintListener(new PaintListener() {
-			
+		/*this.addPaintListener(new PaintListener() {
 			
 			@Override
 			public void paintControl(PaintEvent e) {
@@ -36,6 +66,7 @@ public class MazeDisplay extends Canvas {
 
 				   int width=getSize().x;
 				   int height=getSize().y;
+				   
 
 				   int w=width/mazeData[0].length;
 				   int h=height/mazeData.length;
@@ -48,6 +79,6 @@ public class MazeDisplay extends Canvas {
 				              e.gc.fillRectangle(x,y,w,h);
 				      }
 			}
-		});
+		});*/
 	}
 }
