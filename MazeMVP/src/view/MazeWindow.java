@@ -26,34 +26,29 @@ public class MazeWindow extends BasicWindow implements View {
 	
 	@Override
 	protected void initWidgets() {
+		
 		GridLayout gridLayout = new GridLayout(2, false);
 		shell.setLayout(gridLayout);				
 		
 		Composite btnGroup = new Composite(shell, SWT.BORDER);
 		RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
 		btnGroup.setLayout(rowLayout);
-		
+	
 		Button btnGenerateMaze = new Button(btnGroup, SWT.PUSH);
-		btnGenerateMaze.setText("Generate maze");	
-		
-		btnGenerateMaze.addSelectionListener(new SelectionListener() {
-			
-			@Override
-			public void widgetSelected(SelectionEvent arg0) {
-				showGenerateMazeOptions();
-				
-			}
-			
-			@Override
-			public void widgetDefaultSelected(SelectionEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+		btnGenerateMaze.setText("Generate");	
+		btnGenerateMaze.addSelectionListener(generateListener);
 		
 		Button btnSolveMaze = new Button(btnGroup, SWT.PUSH);
-		btnSolveMaze.setText("Solve maze");
+		btnSolveMaze.setText("Solve");
+		btnSolveMaze.addSelectionListener(solveListener);
 		
+		Button btnSaveMaze = new Button(btnGroup, SWT.PUSH);
+		btnSolveMaze.setText("Save");
+		btnSolveMaze.addSelectionListener(saveListener);
+		
+		Button btnLoadMaze = new Button(btnGroup, SWT.PUSH);
+		btnSolveMaze.setText("Load");
+		btnSolveMaze.addSelectionListener(loadListener);
 	}
 
 	protected void showGenerateMazeOptions() {
@@ -79,7 +74,7 @@ public class MazeWindow extends BasicWindow implements View {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
 				setChanged();
-				notifyObservers("generate_maze aaa " + txtRows.getText() + " " + txtCols.getText());
+				notifyObservers("generate_maze " + txtRows.getText() + " " + txtCols.getText());
 				shell.close();
 			}
 			
