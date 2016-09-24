@@ -42,8 +42,8 @@ public class MyModel extends CommonModel {
 	}
 	
 	@Override
-	public void generateSolution(String cmd) {
-		String[] parm=cmd.split(" ");
+	public void generateSolution(String arg) {
+		String[] parm=arg.split(" ");
 		
 		if(parm.length != 2){
 			controller.UpdateMessage("Invalid Command");

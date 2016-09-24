@@ -12,7 +12,7 @@ import algorithms.search.Solution;
  */
 public interface Model {
 	public void generate(String name, int x, int y, int z);
-	public void generateSolution(String cmd);
+	public void generateSolution(String arg);
 	public Solution<Position> getSolution(String name);
 	public Maze3d getData(String name);
 	public void exit();

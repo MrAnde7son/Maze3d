@@ -27,7 +27,7 @@ public abstract class CommonModel implements Model {
 	public abstract Solution<Position> getSolution(String name);
 	
 	@Override
-	public abstract void generateSolution(String cmd);
+	public abstract void generateSolution(String arg);
 	/**
 	 * Compresses and saves maze to file. 
 	 */
